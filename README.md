@@ -14,7 +14,7 @@ konstanz_data/
 ├── src/
 │   └── visualizer.py     # Visualization logic
 ├── data/
-│   └── raw/              # CSV files (not in Git)
+│   └── raw/              # CSV files 
 ├── requirements.txt      # Dependencies
 └── README.md
 ```

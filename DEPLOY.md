@@ -19,7 +19,7 @@ pip install -r requirements.txt
 python scripts/download_direct.py
 
 # 5. App starten
-streamlit run app.py
+streamlit run streamlit_app.py
 ```
 
 ## ☁️ Streamlit Cloud Deployment
@@ -39,10 +39,11 @@ git push -u origin main
 1. Gehe zu https://streamlit.io/cloud
 2. Mit GitHub anmelden
 3. "New app" klicken
-4. Repository auswählen
-5. **Main file:** `app.py`
-6. **Python version:** 3.9+
-7. "Deploy!" klicken
+4. Repository auswählen: `gorelikspb/dataexplorer`
+5. **Branch:** `main`
+6. **Main file:** `streamlit_app.py`
+7. **Python version:** 3.9+
+8. "Deploy!" klicken
 
 ### Schritt 3: Daten hochladen
 
@@ -57,7 +58,7 @@ Nach dem Deployment:
 ## 📦 Was wird deployed?
 
 ✅ **Code:**
-- `app.py` (Haupt-App)
+- `streamlit_app.py` (Haupt-App)
 - `src/visualizer.py` (Visualisierungslogik)
 - `requirements.txt` (Dependencies)
 

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../common"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "konstanz_data"
+	}
+}

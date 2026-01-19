@@ -50,6 +50,13 @@ with st.sidebar:
         """)
     
     st.markdown("---")
+    st.markdown("### 💻 Code")
+    st.markdown("""
+    **Quellcode auf GitHub:**  
+    [github.com/gorelikspb/dataexplorer](https://github.com/gorelikspb/dataexplorer)
+    """)
+    
+    st.markdown("---")
     st.markdown("### 📧 Weitere Analysen")
     st.markdown("""
     Für andere Datenquellen: [gorelikgo@gmail.com](mailto:gorelikgo@gmail.com)

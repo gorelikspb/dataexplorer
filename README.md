@@ -1,128 +1,80 @@
 # Konstanz Open Data Explorer
 
-**Portfolio-Projekt: Interaktive Visualisierung von Open Data**
+Portfolio project: Interactive visualization of open data from the city of Konstanz.
 
-Eine einfache Streamlit-App zur Visualisierung von Migrationsdaten der Stadt Konstanz (2010-2023).
+A simple Streamlit app for visualizing migration data from Konstanz (2010-2023).
 
-## 📊 Live Demo
+## Quick Start
 
-👉 **[Streamlit Cloud Deployment](https://your-app-name.streamlit.app)** (Link nach Deployment)
+### Local Installation
 
-## 🎯 Projekt-Überblick
-
-Dieses Projekt demonstriert:
-- **Datenvisualisierung** mit Plotly
-- **Web-App Entwicklung** mit Streamlit
-- **Datenverarbeitung** mit Pandas
-- **Open Data Integration** (CKAN API)
-
-### Features
-
-- 📈 **5 interaktive Visualisierungen:**
-  - Gesamtmigration nach Jahren (Zuzug/Wegzug)
-  - Migrationssaldo über Zeit
-  - Top 10 Länder nach Zuzug (mit Jahresauswahl)
-  - Top 10 Länder nach Wegzug (mit Jahresauswahl)
-  - Migrationssaldo der Top 5 Länder (2010-2023)
-- 📋 **Rohdaten-Export** für jeden Graphen
-- 📊 **Automatische Datenladung** beim Start
-
-## 🚀 Quick Start
-
-### Lokale Installation
-
-1. Repository klonen:
+1. Clone repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/gorelikspb/dataexplorer.git
 cd konstanz_data
 ```
 
-2. Virtual Environment erstellen:
+2. Create virtual environment:
 ```bash
 python -m venv venv
 venv\Scripts\activate  # Windows
-# oder
+# or
 source venv/bin/activate  # Linux/Mac
 ```
 
-3. Dependencies installieren:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Daten herunterladen (optional):
+4. Run app:
 ```bash
-python scripts/download_direct.py
+streamlit run streamlit_app.py
 ```
 
-**Hinweis:** Die App lädt automatisch `Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv` beim Start, falls vorhanden.
+The app automatically loads `Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv` on startup if present.
 
-5. App starten:
-```bash
-streamlit run app.py
-```
-
-Die App öffnet sich automatisch im Browser unter `http://localhost:8501`
-
-## 📁 Projektstruktur
+## Project Structure
 
 ```
 konstanz_data/
-├── app.py                    # Haupt-Streamlit-App (200 Zeilen)
+├── streamlit_app.py      # Main Streamlit app
 ├── src/
-│   └── visualizer.py        # Visualisierungslogik (400 Zeilen)
-├── scripts/
-│   └── download_direct.py  # Optional: Daten-Download-Script
+│   └── visualizer.py     # Visualization logic
 ├── data/
-│   └── raw/                 # CSV-Dateien (nicht in Git)
-├── requirements.txt         # 3 Dependencies
-├── README.md               # Diese Datei
-├── DEPLOY.md               # Deployment-Anleitung
-└── .gitignore             # Git-Konfiguration
+│   └── raw/              # CSV files (not in Git)
+├── requirements.txt      # Dependencies
+└── README.md
 ```
 
-## 📊 Datenquelle
+## Data Source
 
-**Open Data Konstanz**: https://offenedaten-konstanz.de/
+Open Data Konstanz: https://offenedaten-konstanz.de/
 
-Aktueller Datensatz: Außenwanderung nach Herkunfts- und Zielgebiet (2010-2023)
+Current dataset: Migration by origin and destination (2010-2023)
 
-## 🔧 Technologie-Stack
+## Technology Stack
 
-- **Python 3.9+**
-- **Streamlit** - Web-App Framework (UI)
-- **Pandas** - Datenverarbeitung
-- **Plotly** - Interaktive Visualisierungen
+- Python 3.9+
+- Streamlit - Web app framework
+- Pandas - Data processing
+- Plotly - Interactive visualizations
 
-**Nur 3 Dependencies** - minimalistisch und schnell zu deployen.
+## Features
 
-## 📝 Verwendung
+- 5 interactive visualizations:
+  - Total migration by year (immigration/emigration)
+  - Migration balance over time
+  - Top 10 countries by immigration (with year selection)
+  - Top 10 countries by emigration (with year selection)
+  - Migration balance of top 5 countries (2010-2023)
+- Raw data export for each chart
+- Automatic data loading on startup
 
-1. Die App lädt automatisch die Migrationsdaten beim Start
-2. Wählen Sie ein Jahr aus dem Dropdown für Top-10-Länder-Grafiken
-3. Klicken Sie auf "📋 Rohdaten" Expander, um die zugrundeliegenden Daten zu sehen
+## Deployment
 
-## 🌐 Deployment
+See [DEPLOY.md](DEPLOY.md) for deployment instructions.
 
-Siehe [DEPLOY.md](DEPLOY.md) für detaillierte Anweisungen zur Deployment auf Streamlit Cloud oder anderen Plattformen.
+## Contact
 
-## 📚 Weitere Informationen
-
-- [ANLEITUNG.md](ANLEITUNG.md) - Anleitung für andere Datenquellen
-- [DEPLOY.md](DEPLOY.md) - Deployment-Anleitung
-
-## 🚀 Deployment
-
-1. **GitHub Repository** erstellen
-2. **Streamlit Cloud** verbinden: https://streamlit.io/cloud
-3. Repository auswählen → Main file: `app.py` → Deploy!
-
-Siehe [DEPLOY.md](DEPLOY.md) für Details.
-
-## 📄 Lizenz
-
-Portfolio-Projekt - frei verwendbar für Lernzwecke.
-
-## 👤 Kontakt
-
-Für Fragen oder weitere Analysen: [gorelikgo@gmail.com](mailto:gorelikgo@gmail.com)
+For questions or other data sources: gorelikgo@gmail.com

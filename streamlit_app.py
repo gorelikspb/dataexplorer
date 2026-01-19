@@ -16,12 +16,11 @@ from src.visualizer import DataVisualizer
 # Konfiguration
 st.set_page_config(
     page_title="Konstanz Open Data Explorer",
-    page_icon="📊",
     layout="wide"
 )
 
 # Titel
-st.title("📊 Konstanz Open Data Explorer")
+st.title("Konstanz Open Data Explorer")
 st.markdown("**Prototyp eines Werkzeugs zur Analyse und Strukturierung offener Statistikdaten der Stadt Konstanz**")
 
 # Sidebar - app information (visible on desktop)
@@ -30,11 +29,11 @@ with st.sidebar:
     st.markdown("**Version 0.1.0**")
     st.markdown("---")
     
-    st.markdown("### 📊 Datenquelle")
+    st.markdown("### Datenquelle")
     st.markdown("**Datenquelle:** [Open Data Konstanz](https://offenedaten-konstanz.de/)")
     st.markdown("**Aktueller Datensatz:** Außenwanderung nach Herkunfts- und Zielgebiet (2010-2023)")
     
-    with st.expander("🔧 Technische Umsetzung", expanded=False):
+    with st.expander("Technische Umsetzung", expanded=False):
         st.markdown("""
         **Implementierung:**
         - **Backend:** Python 3.9+ mit Pandas für Datenverarbeitung
@@ -50,14 +49,14 @@ with st.sidebar:
         """)
     
     st.markdown("---")
-    st.markdown("### 💻 Code")
+    st.markdown("### Code")
     st.markdown("""
     **Quellcode auf GitHub:**  
     [github.com/gorelikspb/dataexplorer](https://github.com/gorelikspb/dataexplorer)
     """)
     
     st.markdown("---")
-    st.markdown("### 📧 Weitere Analysen")
+    st.markdown("### Weitere Analysen")
     st.markdown("""
     Für andere Datenquellen: [gorelikgo@gmail.com](mailto:gorelikgo@gmail.com)
     """)
@@ -80,7 +79,7 @@ if st.session_state.current_data is None:
             pass
 
 # Main content - visualization only
-st.header("📊 Visualisierung")
+st.header("Visualisierung")
 
 if st.session_state.current_data is None:
     st.info("Daten werden automatisch geladen...")
@@ -95,7 +94,7 @@ else:
         st.subheader("Außenwanderung Konstanz 2010-2023")
         
         # Interesting facts and patterns
-        with st.expander("🔍 Interessante Fakten und Muster", expanded=False):
+        with st.expander("Interessante Fakten und Muster", expanded=False):
             st.markdown("""
             **Wichtige Erkenntnisse aus der Analyse:**
             
@@ -132,7 +131,7 @@ else:
                     st.plotly_chart(figures[0], use_container_width=True)
                     
                     # Show raw data for this chart
-                    with st.expander("📋 Rohdaten: Gesamtmigration nach Jahren", expanded=False):
+                    with st.expander("Rohdaten: Gesamtmigration nach Jahren", expanded=False):
                         # Extract data from chart
                         years_data = figures[0].data[0].x
                         zuzug_data = figures[0].data[0].y
@@ -171,7 +170,7 @@ else:
                                 if fig_zuzug is not None:
                                     st.plotly_chart(fig_zuzug, use_container_width=True)
                                     
-                                    with st.expander("📋 Rohdaten: Top 10 Zuzug", expanded=False):
+                                    with st.expander("Rohdaten: Top 10 Zuzug", expanded=False):
                                         countries_z = fig_zuzug.data[0].y
                                         values_z = fig_zuzug.data[0].x
                                         zuzug_df = pd.DataFrame({
@@ -187,7 +186,7 @@ else:
                                 if fig_wegzug is not None:
                                     st.plotly_chart(fig_wegzug, use_container_width=True)
                                     
-                                    with st.expander("📋 Rohdaten: Top 10 Wegzug", expanded=False):
+                                    with st.expander("Rohdaten: Top 10 Wegzug", expanded=False):
                                         countries_w = fig_wegzug.data[0].y
                                         values_w = fig_wegzug.data[0].x
                                         wegzug_df = pd.DataFrame({
@@ -210,7 +209,7 @@ else:
                     st.caption("**Hinweis:** Migrationssaldo = Zuzug - Wegzug. Positive Werte bedeuten Netto-Zuzug (mehr Menschen ziehen zu als weg), negative Werte bedeuten Netto-Wegzug.")
                     
                     # Show raw data for dynamics chart
-                    with st.expander("📋 Rohdaten: Migrationssaldo Top 5 Länder nach Jahren", expanded=False):
+                    with st.expander("Rohdaten: Migrationssaldo Top 5 Länder nach Jahren", expanded=False):
                         # Extract data from chart
                         years_dyn = figures[2].data[0].x
                         countries_dyn = [trace.name for trace in figures[2].data]

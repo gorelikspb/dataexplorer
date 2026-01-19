@@ -1,85 +1,80 @@
 # Deployment Guide
 
-## 🚀 Schnellstart (Lokal)
+## Quick Start (Local)
 
 ```bash
-# 1. Repository klonen
-git clone <your-repo-url>
+# 1. Clone repository
+git clone https://github.com/gorelikspb/dataexplorer.git
 cd konstanz_data
 
-# 2. Virtual Environment
+# 2. Create virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
 # source venv/bin/activate  # Linux/Mac
 
-# 3. Dependencies installieren
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Daten herunterladen (optional)
-python scripts/download_direct.py
-
-# 5. App starten
+# 4. Run app
 streamlit run streamlit_app.py
 ```
 
-## ☁️ Streamlit Cloud Deployment
+## Streamlit Cloud Deployment
 
-### Schritt 1: GitHub Repository
+### Step 1: GitHub Repository
 
 ```bash
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin <your-github-repo-url>
+git remote add origin https://github.com/gorelikspb/dataexplorer.git
 git push -u origin main
 ```
 
-### Schritt 2: Streamlit Cloud
+### Step 2: Streamlit Cloud
 
-1. Gehe zu https://streamlit.io/cloud
-2. Mit GitHub anmelden
-3. "New app" klicken
-4. Repository auswählen: `gorelikspb/dataexplorer`
-5. **Branch:** `main`
-6. **Main file:** `streamlit_app.py`
-7. **Python version:** 3.9+
-8. "Deploy!" klicken
+1. Go to https://streamlit.io/cloud
+2. Sign in with GitHub
+3. Click "New app"
+4. Select repository: `gorelikspb/dataexplorer`
+5. Branch: `main`
+6. Main file: `streamlit_app.py`
+7. Python version: 3.9+
+8. Click "Deploy!"
 
-### Schritt 3: Daten hochladen
+### Step 3: Upload Data
 
-Nach dem Deployment:
+After deployment:
 
 1. In Streamlit Cloud: "⋮" → "Manage app" → "Files"
-2. Navigiere zu `data/raw/`
-3. Lade `Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv` hoch
+2. Navigate to `data/raw/`
+3. Upload `Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv`
 
-**Oder:** Datei direkt in GitHub Repository committen (wenn < 10MB).
+Or: Commit file directly to GitHub repository (if < 10MB).
 
-## 📦 Was wird deployed?
+## What Gets Deployed
 
-✅ **Code:**
-- `streamlit_app.py` (Haupt-App)
-- `src/visualizer.py` (Visualisierungslogik)
+Code:
+- `streamlit_app.py` (Main app)
+- `src/visualizer.py` (Visualization logic)
 - `requirements.txt` (Dependencies)
 
-✅ **Konfiguration:**
+Configuration:
 - `.gitignore`
-- `.streamlit/config.toml` (falls vorhanden)
+- `.streamlit/config.toml` (if present)
 
-❌ **Nicht deployed:**
-- `venv/` (Virtual Environment)
-- `data/raw/*.csv` (große Dateien - manuell hochladen)
-- `archive/` (alte Dateien)
+Not deployed:
+- `venv/` (Virtual environment)
+- `data/raw/*.csv` (Large files - upload manually)
+- `archive/` (Old files)
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
-**Problem:** App lädt keine Daten
-- **Lösung:** CSV-Datei in `data/raw/` hochladen (siehe Schritt 3)
+Problem: App doesn't load data
+- Solution: Upload CSV file to `data/raw/` (see Step 3)
 
-**Problem:** Dependencies fehlen
-- **Lösung:** `requirements.txt` prüfen, alle Pakete installiert?
+Problem: Missing dependencies
+- Solution: Check `requirements.txt`, are all packages installed?
 
-**Problem:** Python-Version
-- **Lösung:** Streamlit Cloud unterstützt Python 3.9-3.11
-
-
+Problem: Python version
+- Solution: Streamlit Cloud supports Python 3.9-3.11

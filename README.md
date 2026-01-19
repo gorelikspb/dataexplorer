@@ -6,36 +6,6 @@ A simple Streamlit app for visualizing migration data from Konstanz (2010-2023).
 
 **Live Demo:** https://konstanzdataexplorer.streamlit.app/
 
-## Quick Start
-
-### Local Installation
-
-1. Clone repository:
-```bash
-git clone https://github.com/gorelikspb/dataexplorer.git
-cd konstanz_data
-```
-
-2. Create virtual environment:
-```bash
-python -m venv venv
-venv\Scripts\activate  # Windows
-# or
-source venv/bin/activate  # Linux/Mac
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Run app:
-```bash
-streamlit run streamlit_app.py
-```
-
-The app automatically loads `Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv` on startup if present.
-
 ## Project Structure
 
 ```
@@ -72,12 +42,6 @@ Current dataset: Migration by origin and destination (2010-2023)
   - Migration balance of top 5 countries (2010-2023)
 - Raw data export for each chart
 - Automatic data loading on startup
-
-## Deployment
-
-**Live Application:** https://konstanzdataexplorer.streamlit.app/
-
-See [DEPLOY.md](DEPLOY.md) for deployment instructions.
 
 ## Contact
 

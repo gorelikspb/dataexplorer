@@ -4,6 +4,8 @@ Portfolio project: Interactive visualization of open data from the city of Konst
 
 A simple Streamlit app for visualizing migration data from Konstanz (2010-2023).
 
+**Live Demo:** https://konstanzdataexplorer.streamlit.app/
+
 ## Quick Start
 
 ### Local Installation
@@ -72,6 +74,8 @@ Current dataset: Migration by origin and destination (2010-2023)
 - Automatic data loading on startup
 
 ## Deployment
+
+**Live Application:** https://konstanzdataexplorer.streamlit.app/
 
 See [DEPLOY.md](DEPLOY.md) for deployment instructions.
 

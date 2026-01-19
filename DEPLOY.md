@@ -42,15 +42,7 @@ git push -u origin main
 7. Python version: 3.9+
 8. Click "Deploy!"
 
-### Step 3: Upload Data
-
-After deployment:
-
-1. In Streamlit Cloud: "⋮" → "Manage app" → "Files"
-2. Navigate to `data/raw/`
-3. Upload `Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv`
-
-Or: Commit file directly to GitHub repository (if < 10MB).
+The CSV data file is already included in the repository, so no additional file upload is needed.
 
 ## What Gets Deployed
 
@@ -59,19 +51,21 @@ Code:
 - `src/visualizer.py` (Visualization logic)
 - `requirements.txt` (Dependencies)
 
+Data:
+- `data/raw/Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv` (Migration data)
+
 Configuration:
 - `.gitignore`
 - `.streamlit/config.toml` (if present)
 
 Not deployed:
 - `venv/` (Virtual environment)
-- `data/raw/*.csv` (Large files - upload manually)
 - `archive/` (Old files)
 
 ## Troubleshooting
 
 Problem: App doesn't load data
-- Solution: Upload CSV file to `data/raw/` (see Step 3)
+- Solution: Check that the CSV file is present in the repository at `data/raw/Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv`
 
 Problem: Missing dependencies
 - Solution: Check `requirements.txt`, are all packages installed?

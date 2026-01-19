@@ -61,30 +61,27 @@ with st.sidebar:
     Für andere Datenquellen: [gorelikgo@gmail.com](mailto:gorelikgo@gmail.com)
     """)
 
-# Session State
-if 'current_data' not in st.session_state:
-    st.session_state.current_data = None
-if 'current_file' not in st.session_state:
-    st.session_state.current_file = None
-
-# Automatically load migration file on startup
-if st.session_state.current_data is None:
+# Load migration data file
+@st.cache_data
+def load_data():
+    """Load migration data from CSV file"""
     migration_file = Path("data/raw/Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv")
-    if migration_file.exists():
-        try:
-            df = pd.read_csv(migration_file, sep=';', encoding='utf-8')
-            st.session_state.current_data = df
-            st.session_state.current_file = migration_file.name
-        except:
-            pass
+    try:
+        df = pd.read_csv(migration_file, sep=';', encoding='utf-8')
+        return df
+    except Exception as e:
+        st.error(f"Fehler beim Laden der Daten: {e}")
+        return None
 
 # Main content - visualization only
 st.header("Visualisierung")
 
-if st.session_state.current_data is None:
-    st.info("Daten werden automatisch geladen...")
+df = load_data()
+
+if df is None:
+    st.error("Daten konnten nicht geladen werden. Bitte überprüfen Sie, ob die Datei vorhanden ist.")
+    st.stop()
 else:
-    df = st.session_state.current_data
     
     # Prüfe Datentyp und zeige passende Visualisierungen
     visualizer = DataVisualizer(df)

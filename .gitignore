@@ -38,13 +38,14 @@ ENV/
 *.ipynb_checkpoints/
 
 # Data files (large) - keep structure but ignore actual data
-data/raw/*.csv
 data/raw/*.json
 data/raw/*.xlsx
 data/raw/*.xls
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+# Allow migration CSV file
+!data/raw/Aussenwanderung_nach_Herkunfts_Ziel-Staat_2010-2023_0_0.csv
 
 # Output files
 output/*
